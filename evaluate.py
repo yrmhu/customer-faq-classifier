@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from improved.classifier import classify_question
 from improved.client import get_client
-from improved.config import VALID_CATEGORIES
+from improved.config import MODEL, VALID_CATEGORIES
 from improved.mock import original_mock_classify, improved_mock_classify
 from improved.prompts import ORIGINAL_PROMPT_TEMPLATE, SYSTEM_PROMPT_V2
 from improved.parser import parse_category
@@ -149,7 +149,7 @@ def main():
                 prompt = ORIGINAL_PROMPT_TEMPLATE.format(question=question)
                 try:
                     response = client.chat.completions.create(
-                        model="gpt-4o-mini",
+                        model=MODEL,
                         messages=[{"role": "user", "content": prompt}],
                         temperature=0,
                     )
