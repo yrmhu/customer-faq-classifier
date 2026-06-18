@@ -1,1 +1,0 @@
-https://github.com/yrmhu/customer-faq-classifier.git
