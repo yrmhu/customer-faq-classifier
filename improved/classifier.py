@@ -16,8 +16,11 @@ import asyncio
 import json
 import logging
 import os
+import sys
 import time
 from typing import Optional
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from improved.client import get_client
 from improved.config import MAX_RETRIES, MODEL, VALID_CATEGORIES
